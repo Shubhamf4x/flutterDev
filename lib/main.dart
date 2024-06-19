@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,41 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: LoginScreen(),
+      home: SplashScreen(), // Show the splash screen initially
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _navigateToLoginScreen();
+  }
+
+  _navigateToLoginScreen() async {
+    await Future.delayed(Duration(seconds: 3), () {});
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => LoginScreen()),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Image.asset(
+          'assets/splashex.jpeg',
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+      ),
     );
   }
 }
@@ -370,7 +405,7 @@ class DashboardScreen extends StatelessWidget {
       case DashboardOptions.contribute:
         return Icons.edit;
       case DashboardOptions.practice:
-        return Icons.code_off;  // Changed icon from code to code_off to represent </>.
+        return Icons.code_off; // Changed icon from code to code_off to represent </>.
       case DashboardOptions.learn:
         return Icons.school;
       case DashboardOptions.interests:
