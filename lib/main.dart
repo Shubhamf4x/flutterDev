@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: SplashScreen(), // Show the splash screen initially
+      home: SplashScreen(),
     );
   }
 }
@@ -273,22 +273,16 @@ class DashboardScreen extends StatelessWidget {
   void _navigateToOption(BuildContext context, DashboardOptions option) {
     switch (option) {
       case DashboardOptions.contribute:
-      // Navigate to Contribute screen
         break;
       case DashboardOptions.practice:
-      // Navigate to Practice screen
         break;
       case DashboardOptions.learn:
-      // Navigate to Learn screen
         break;
       case DashboardOptions.interests:
-      // Navigate to Interests screen
         break;
       case DashboardOptions.help:
-      // Navigate to Help screen
         break;
       case DashboardOptions.settings:
-      // Navigate to Settings screen
         break;
     }
   }
@@ -405,7 +399,7 @@ class DashboardScreen extends StatelessWidget {
       case DashboardOptions.contribute:
         return Icons.edit;
       case DashboardOptions.practice:
-        return Icons.code_off; // Changed icon from code to code_off to represent </>.
+        return Icons.code_off; 
       case DashboardOptions.learn:
         return Icons.school;
       case DashboardOptions.interests:
@@ -463,7 +457,6 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-// Reusable Components
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
