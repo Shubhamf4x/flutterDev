@@ -53,6 +53,7 @@ flutter:
     - assets/userdata.json
     - assets/company_logo.png
     - assets/splashex.jpeg
+    - assets/user_avatar.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
